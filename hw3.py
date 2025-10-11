@@ -66,6 +66,14 @@ def retrieve_age_lbyl(person):
 # that it might not exist. 
 #
 
+import pandas as pd
+
+def read_data():
+    try:
+        data = pd.read_csv('data.csv')
+        return "File successfully read!"
+    except FileNotFoundError:
+        return "There's no such file on path!"
 
 # 5) Squash some bugs! 
 # Find the possible logical errors (bugs) 
