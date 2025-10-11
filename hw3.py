@@ -80,24 +80,68 @@ def read_data():
 # in the code blocks below. Comment in each of them
 # which logical errors did you find and correct them
 ### (a)
-'''total_double_sum = 0
+total_double_sum = 0
 for elem in [10, 5, 2]:
     double = elem * 2
-    total_double_sum += elem
+    total_double_sum += elem     
+
+### Solution (a)
+# When summing, we are not using the variable with the 
+# doubled element, but rather the plain element. 
+
+### Correction (a)
+total_double_sum = 0
+for elem in [10, 5, 2]:
+    double = elem * 2
+    total_double_sum += double   
 
 ### (b)
 strings = ''
 for string in ['I', 'am', 'Groot']:
     strings = string+"_"+string
 
+### Solution (b)
+# Currently, for each element in the list provided,
+# the element is duplicated and separated by a "_"
+# character, and the previous value of the variable
+# strings is replaced by this new string. The intention
+# is, probably, to get a unique string with all the
+# elements in the provided list preceded by "_".
+
+### Correction (b)
+strings = ''
+for string in ['I', 'am', 'Groot']:
+    strings = strings+"_"+string
+
 ### (c) Careful!
-j=10
+'''j=10
 while j > 0:
+   j += 1'''
+
+### Solution (c)
+# Under the current state of things, the condition for 
+# the while loop is always satisfied, thus reaching an
+# infinite loop. We have modified the condition so that
+# the loop is ended when j is equal or greater than 20.
+
+### Correction (c)
+j=10
+while j < 20:
    j += 1
 
 ### (d)
 productory = 0
 for elem in [1, 5, 25]:
-    productory *= elem'''
+    productory *= elem
 
+### Solution (d)
+# By initilaizing the variable productory as 0,
+# we are making all the results necessarily 0, 
+# no matter the elements in the list provided.
+# In order to get the intended result, the
+# variable should be initialized as 1.
 
+### Correction (d)
+productory = 1
+for elem in [1, 5, 25]:
+    productory *= elem
