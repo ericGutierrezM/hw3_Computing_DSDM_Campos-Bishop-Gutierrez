@@ -13,6 +13,16 @@
 # where <light> is the value of the parameter light.
 #
 
+def car_at_light (light):
+    if(light =='red'):
+        return "stop"
+    elif(light == 'green'):
+        return "go"
+    elif(light == 'yellow'):
+        return "wait"
+    else:
+        raise Exception(f'Undefined instruction for color: <{light}>')
+
 # 2)
 # Create a function named "safe_subtract" that
 # takes two parameters and returns the result of
@@ -31,6 +41,18 @@
 # Name the first function "retrieve_age_eafp" and follow EAFP
 # Name the second function "retrieve_age_lbyl" and follow lbyl
 
+def retrieve_age_eafp(person):
+    try:
+        return(f'{person["name"]} {person["last_name"]} is {int(2025-person["birth"])} years old.')
+    except KeyError:
+        return(f"{person['name']} {person["last_name"]} has no information related to age! I'm afraid you'll have to ask him/her yourself!")
+    
+def retrieve_age_lbyl(person):
+    if 'birth' in person:
+        return(f'{person["name"]} {person["last_name"]} is {int(2025-person["birth"])} years old.')
+    else:
+        return(f"{person['name']} {person["last_name"]} has no information related to age! I'm afraid you'll have to ask him/her yourself!")
+
 # 4)
 # Imagine you have a file named data.csv. 
 # Create a function called "read_data" that reads the file
@@ -44,7 +66,7 @@
 # in the code blocks below. Comment in each of them
 # which logical errors did you find and correct them
 ### (a)
-total_double_sum = 0
+'''total_double_sum = 0
 for elem in [10, 5, 2]:
     double = elem * 2
     total_double_sum += elem
@@ -62,6 +84,6 @@ while j > 0:
 ### (d)
 productory = 0
 for elem in [1, 5, 25]:
-    productory *= elem
+    productory *= elem'''
 
 
