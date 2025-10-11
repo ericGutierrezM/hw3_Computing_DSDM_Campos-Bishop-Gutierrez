@@ -32,6 +32,12 @@ def car_at_light (light):
 # If there is any other reason why it fails show the problem 
 # 
 
+def safe_subtract(a,b):
+    try:
+        return a-b
+    except TypeError:
+        return None
+    
 # 3)
 # Imagine you have a dictionary with the attributes of a person
 # {'name': 'John', 'last_name': 'Doe', 'birth': 1987}
